@@ -35,4 +35,4 @@ dependencies-stamp
 # Test files extracted from ttar
 collector/fixtures/sys/
 
-/vendor
+# /vendor

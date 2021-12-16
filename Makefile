@@ -19,7 +19,7 @@ DOCKER_ARCHS ?= amd64 armv7 arm64 ppc64le s390x
 
 include Makefile.common
 
-PROMTOOL_VERSION ?= 2.18.1
+PROMTOOL_VERSION ?= 2.30.0
 PROMTOOL_URL     ?= https://github.com/prometheus/prometheus/releases/download/v$(PROMTOOL_VERSION)/prometheus-$(PROMTOOL_VERSION).$(GO_BUILD_PLATFORM).tar.gz
 PROMTOOL         ?= $(FIRST_GOPATH)/bin/promtool
 
@@ -56,6 +56,12 @@ else
 			PROMU_CONF ?= .promu-cgo.yml
 		endif
 	endif
+endif
+
+ifeq ($(BUILD_PROMU),false)
+	PROMU := promu --config $(PROMU_CONF)
+else
+	PROMU := $(FIRST_GOPATH)/bin/promu --config $(PROMU_CONF)
 endif
 
 e2e-out = collector/fixtures/e2e-output.txt
@@ -137,4 +143,4 @@ promtool: $(PROMTOOL)
 
 $(PROMTOOL):
 	mkdir -p $(FIRST_GOPATH)/bin
-	curl -fsS -L $(PROMTOOL_URL) | tar -xvzf - -C $(FIRST_GOPATH)/bin --no-anchored --strip 1 promtool
+	curl -fsS -L $(PROMTOOL_URL) | tar -xvzf - -C $(FIRST_GOPATH)/bin --strip 1 "prometheus-$(PROMTOOL_VERSION).$(GO_BUILD_PLATFORM)/promtool"
