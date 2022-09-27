@@ -35,6 +35,19 @@ const (
 	BenchStrict
 )
 
+func zero(b []byte) {
+	for i := range b {
+		b[i] = 0
+	}
+}
+
+// MaxOpenFiles returns the RLIMIT_NOFILE from getrlimit.
+func MaxOpenFiles() (uint64, error) {
+	rlimit := &unix.Rlimit{}
+	err := unix.Getrlimit(unix.RLIMIT_NOFILE, rlimit)
+	return rlimit.Max, err
+}
+
 // LockThread locks an goroutine to an OS thread and then sets the affinity of
 // the thread to a processor core.
 func LockThread(core int) (func(), error) {

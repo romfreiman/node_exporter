@@ -1,5 +1,46 @@
 # CHANGELOG
 
+## Unreleased
+
+## v1.6.0
+
+**This is the first release of package netlink that only supports Go 1.13+.
+Users on older versions of Go must use v1.5.0.**
+
+- [New API] [commit](https://github.com/mdlayher/netlink/commit/ad9e2c41caa993e3f4b68831d6cb2cb05818275d):
+  the `netlink.Config.Strict` field can be used to apply a more strict default
+  set of options to a `netlink.Conn`. This is recommended for applications
+  running on modern Linux kernels, but cannot be enabled by default because the
+  options may require a more recent kernel than the minimum kernel version that
+  Go supports. See the documentation for details.
+- [Improvement]: broke some integration tests into a separate Go module so the
+  default `go.mod` for package `netlink` has fewer dependencies.
+
+## v1.5.0
+
+**This is the last release of package netlink that supports Go 1.12.**
+
+- [New API] [commit](https://github.com/mdlayher/netlink/commit/53a1c10065e51077659ceedf921c8f0807abe8c0):
+  the `netlink.Config.PID` field can be used to specify an explicit port ID when
+  binding the netlink socket. This is intended for advanced use cases and most
+  callers should leave this field set to 0.
+- [Improvement]: more low-level functionality ported to
+  `github.com/mdlayher/socket`, reducing package complexity.
+
+## v1.4.2
+
+- [Documentation] [commit](https://github.com/mdlayher/netlink/commit/177e6364fb170d465d681c7c8a6283417a6d3e49):
+  the `netlink.Config.DisableNSLockThread` now properly uses Go's deprecated
+  identifier convention. This option has been a noop for a long time and should
+  not be used.
+- [Improvement] [#189](https://github.com/mdlayher/netlink/pull/189): the
+  package now uses Go 1.17's `//go:build` identifiers. Thanks @tklauser.
+- [Bug Fix]
+  [commit](https://github.com/mdlayher/netlink/commit/fe6002e030928bd1f2a446c0b6c65e8f2df4ed5e):
+  the `netlink.AttributeEncoder`'s `Bytes`, `String`, and `Do` methods now
+  properly reject byte slices and strings which are too large to fit in the
+  value of a netlink attribute. Thanks @ubiquitousbyte for the report.
+
 ## v1.4.1
 
 - [Improvement]: significant runtime network poller integration cleanup through
@@ -52,7 +93,8 @@
 
 ## v1.2.0
 
-**This is the first release of package netlink that only supports Go 1.12+. Users on older versions must use v1.1.1.**
+**This is the first release of package netlink that only supports Go 1.12+.
+Users on older versions of Go must use v1.1.1.**
 
 - [Improvement] [#173](https://github.com/mdlayher/netlink/pull/173): support
   for Go 1.11 and below has been dropped. All users are highly recommended to

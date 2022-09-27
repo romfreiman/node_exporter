@@ -11,13 +11,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+//go:build linux
 // +build linux
 
 package sysfs
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 
@@ -55,14 +55,14 @@ type DMIClass struct {
 func (fs FS) DMIClass() (*DMIClass, error) {
 	path := fs.sys.Path(dmiClassPath)
 
-	files, err := ioutil.ReadDir(path)
+	files, err := os.ReadDir(path)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read directory %q: %w", path, err)
 	}
 
 	var dmi DMIClass
 	for _, f := range files {
-		if !f.Mode().IsRegular() {
+		if !f.Type().IsRegular() {
 			continue
 		}
 

@@ -14,7 +14,6 @@
 package btrfs
 
 import (
-	"io/ioutil"
 	"os"
 	"path"
 	"path/filepath"
@@ -80,7 +79,7 @@ func (fs FS) Stats() ([]*Stats, error) {
 	return stats, nil
 }
 
-// GetStats collects all Btrfs statistics from sysfs
+// GetStats collects all Btrfs statistics from sysfs.
 func GetStats(uuidPath string) (*Stats, error) {
 	r := &reader{path: uuidPath}
 	s := r.readFilesystemStats()
@@ -122,7 +121,7 @@ func (r *reader) readValue(n string) (v uint64) {
 
 // listFiles returns a list of files for a directory of the reader.
 func (r *reader) listFiles(p string) []string {
-	files, err := ioutil.ReadDir(path.Join(r.path, p))
+	files, err := os.ReadDir(path.Join(r.path, p))
 	if err != nil {
 		r.err = err
 		return nil
@@ -162,9 +161,9 @@ func (r *reader) readAllocationStats(d string) (a *AllocationStats) {
 	return
 }
 
-// readLayouts reads all Btrfs layout statistics for the current path
+// readLayouts reads all Btrfs layout statistics for the current path.
 func (r *reader) readLayouts() map[string]*LayoutUsage {
-	files, err := ioutil.ReadDir(r.path)
+	files, err := os.ReadDir(r.path)
 	if err != nil {
 		r.err = err
 		return nil
