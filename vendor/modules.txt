@@ -4,8 +4,8 @@ github.com/alecthomas/kingpin/v2
 # github.com/alecthomas/units v0.0.0-20211218093645-b94a6e3cc137
 ## explicit; go 1.15
 github.com/alecthomas/units
-# github.com/beevik/ntp v0.3.0
-## explicit
+# github.com/beevik/ntp v1.3.0
+## explicit; go 1.13
 github.com/beevik/ntp
 # github.com/beorn7/perks v1.0.1
 ## explicit; go 1.11
@@ -27,7 +27,7 @@ github.com/dennwc/btrfs/mtab
 # github.com/dennwc/ioctl v1.0.0
 ## explicit
 github.com/dennwc/ioctl
-# github.com/ema/qdisc v0.0.0-20230120214811-5b708f463de3
+# github.com/ema/qdisc v1.0.0
 ## explicit; go 1.18
 github.com/ema/qdisc
 # github.com/go-kit/log v0.2.1
@@ -65,7 +65,7 @@ github.com/josharian/native
 # github.com/jpillora/backoff v1.0.0
 ## explicit; go 1.13
 github.com/jpillora/backoff
-# github.com/jsimonetti/rtnetlink v1.3.2
+# github.com/jsimonetti/rtnetlink v1.3.5
 ## explicit; go 1.18
 github.com/jsimonetti/rtnetlink
 github.com/jsimonetti/rtnetlink/internal/unix
@@ -77,13 +77,13 @@ github.com/lufia/iostat
 # github.com/mattn/go-xmlrpc v0.0.3
 ## explicit; go 1.10
 github.com/mattn/go-xmlrpc
-# github.com/matttproud/golang_protobuf_extensions v1.0.4
-## explicit; go 1.9
-github.com/matttproud/golang_protobuf_extensions/pbutil
-# github.com/mdlayher/ethtool v0.0.0-20221212131811-ba3b4bc2e02c
+# github.com/matttproud/golang_protobuf_extensions/v2 v2.0.0
+## explicit; go 1.19
+github.com/matttproud/golang_protobuf_extensions/v2/pbutil
+# github.com/mdlayher/ethtool v0.1.0
 ## explicit; go 1.19
 github.com/mdlayher/ethtool
-# github.com/mdlayher/genetlink v1.3.1
+# github.com/mdlayher/genetlink v1.3.2
 ## explicit; go 1.18
 github.com/mdlayher/genetlink
 # github.com/mdlayher/netlink v1.7.2
@@ -93,8 +93,8 @@ github.com/mdlayher/netlink/nlenc
 # github.com/mdlayher/socket v0.4.1
 ## explicit; go 1.20
 github.com/mdlayher/socket
-# github.com/mdlayher/wifi v0.0.0-20220330172155-a44c70b6d3c8
-## explicit; go 1.17
+# github.com/mdlayher/wifi v0.1.0
+## explicit; go 1.20
 github.com/mdlayher/wifi
 # github.com/mwitkow/go-conntrack v0.0.0-20190716064945-2f068394615f
 ## explicit
@@ -106,19 +106,19 @@ github.com/opencontainers/selinux/pkg/pwalkdir
 # github.com/prometheus-community/go-runit v0.1.0
 ## explicit; go 1.20
 github.com/prometheus-community/go-runit/runit
-# github.com/prometheus/client_golang v1.15.1
-## explicit; go 1.17
+# github.com/prometheus/client_golang v1.17.0
+## explicit; go 1.19
 github.com/prometheus/client_golang/prometheus
 github.com/prometheus/client_golang/prometheus/collectors
 github.com/prometheus/client_golang/prometheus/internal
 github.com/prometheus/client_golang/prometheus/promhttp
 github.com/prometheus/client_golang/prometheus/testutil
 github.com/prometheus/client_golang/prometheus/testutil/promlint
-# github.com/prometheus/client_model v0.4.0
-## explicit; go 1.18
+# github.com/prometheus/client_model v0.5.0
+## explicit; go 1.19
 github.com/prometheus/client_model/go
-# github.com/prometheus/common v0.44.0
-## explicit; go 1.18
+# github.com/prometheus/common v0.45.0
+## explicit; go 1.20
 github.com/prometheus/common/config
 github.com/prometheus/common/expfmt
 github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
@@ -130,7 +130,7 @@ github.com/prometheus/common/version
 ## explicit; go 1.18
 github.com/prometheus/exporter-toolkit/web
 github.com/prometheus/exporter-toolkit/web/kingpinflag
-# github.com/prometheus/procfs v0.10.0
+# github.com/prometheus/procfs v0.12.0
 ## explicit; go 1.19
 github.com/prometheus/procfs
 github.com/prometheus/procfs/bcache
@@ -179,8 +179,8 @@ golang.org/x/net/internal/socket
 golang.org/x/net/internal/timeseries
 golang.org/x/net/ipv4
 golang.org/x/net/trace
-# golang.org/x/oauth2 v0.8.0
-## explicit; go 1.17
+# golang.org/x/oauth2 v0.12.0
+## explicit; go 1.18
 golang.org/x/oauth2
 golang.org/x/oauth2/clientcredentials
 golang.org/x/oauth2/internal
@@ -206,7 +206,7 @@ google.golang.org/appengine/internal/log
 google.golang.org/appengine/internal/remote_api
 google.golang.org/appengine/internal/urlfetch
 google.golang.org/appengine/urlfetch
-# google.golang.org/protobuf v1.30.0
+# google.golang.org/protobuf v1.31.0
 ## explicit; go 1.11
 google.golang.org/protobuf/encoding/prototext
 google.golang.org/protobuf/encoding/protowire
