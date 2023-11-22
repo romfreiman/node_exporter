@@ -5,6 +5,23 @@
 * [ENHANCEMENT]
 * [BUGFIX]
 
+## 1.7.0 / 2023-11-11
+
+* [FEATURE] Add ZFS freebsd per dataset stats #2753
+* [FEATURE] Add cpu vulnerabilities reporting from sysfs #2721
+* [ENHANCEMENT] Parallelize stat calls in Linux filesystem collector #1772
+* [ENHANCEMENT] Add missing linkspeeds to ethtool collector 2711
+* [ENHANCEMENT] Add CPU MHz as the value for `node_cpu_info` metric #2778
+* [ENHANCEMENT] Improve qdisc collector performance #2779
+* [ENHANCEMENT] Add include and exclude filter for hwmon collector #2699
+* [ENHANCEMENT] Optionally fetch ARP stats via rtnetlink instead of procfs #2777
+* [BUFFIX] Fix ZFS arcstats on FreeBSD 14.0+ 2754
+* [BUGFIX] Fallback to 32-bit stats in netdev #2757
+* [BUGFIX] Close btrfs.FS handle after use #2780
+* [BUGFIX] Move RO status before error return #2807
+* [BUFFIX] Fix `promhttp_metric_handler_errors_total` being always active #2808
+* [BUGFIX] Fix nfsd v4 index miss #2824
+
 ## 1.6.1 / 2023-06-17
 
 Rebuild with latest Go compiler bugfix release.
@@ -33,8 +50,8 @@ Rebuild with latest Go compiler bugfix release.
 * [ENHANCEMENT] Use `SCSI_IDENT_SERIAL` as serial in diskstats #2612
 * [ENHANCEMENT] Read missing from netlink netclass attributes from sysfs #2669
 * [BUGFIX] perf: fixes for automatically detecting the correct tracefs mountpoints #2553
-* [BUGFIX] Fix `thermal_zone` collector noise @2554
-* [BUGFIX] Fix a problem fetching the user wire count on FreeBSD 2584
+* [BUGFIX] Fix `thermal_zone` collector noise #2554
+* [BUGFIX] Fix a problem fetching the user wire count on FreeBSD #2584
 * [BUGFIX] interrupts: Fix fields on linux aarch64 #2631
 * [BUGFIX] Remove metrics of offline CPUs in CPU collector #2605
 * [BUGFIX] Fix OpenBSD filesystem collector string parsing #2637
@@ -134,9 +151,9 @@ NOTE: In order to support globs in the textfile collector path, filenames expose
 * [ENHANCEMENT] Add flag to disable guest CPU metrics #2123
 * [ENHANCEMENT] Add DMI collector #2131
 * [ENHANCEMENT] Add threads metrics to processes collector #2164
-* [ENHANCMMENT] Reduce timer GC delays in the Linux filesystem collector #2169
-* [ENHANCMMENT] Add TCPTimeouts to netstat default filter #2189
-* [ENHANCMMENT] Use SysctlTimeval for boottime collector on BSD #2208
+* [ENHANCEMENT] Reduce timer GC delays in the Linux filesystem collector #2169
+* [ENHANCEMENT] Add TCPTimeouts to netstat default filter #2189
+* [ENHANCEMENT] Use SysctlTimeval for boottime collector on BSD #2208
 * [BUGFIX] ethtool: Sanitize metric names #2093
 * [BUGFIX] Fix ethtool collector for multiple interfaces #2126
 * [BUGFIX] Fix possible panic on macOS #2133
@@ -466,7 +483,7 @@ Other breaking changes:
 **Breaking changes**
 
 This release contains major breaking changes to flag handling.
-* The flag library has been changed, all flags now require double-dashs. (`-foo` becomes `--foo`).
+* The flag library has been changed, all flags now require double-dashes. (`-foo` becomes `--foo`).
 * The collector selection flag has been replaced by individual boolean flags.
 * The `-collector.procfs` and `-collector.sysfs` flags have been renamed to `--path.procfs` and `--path.sysfs` respectively.
 

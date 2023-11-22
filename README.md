@@ -97,10 +97,11 @@ arp | device | --collector.arp.device-include | --collector.arp.device-exclude
 cpu | bugs | --collector.cpu.info.bugs-include | N/A
 cpu | flags | --collector.cpu.info.flags-include | N/A
 diskstats | device | --collector.diskstats.device-include | --collector.diskstats.device-exclude
-ethtool | device | N/A | --collector.ethtool.device-exclude
+ethtool | device | --collector.ethtool.device-include | --collector.ethtool.device-exclude
 ethtool | metrics | --collector.ethtool.metrics-include | N/A
 filesystem | fs-types | N/A | --collector.filesystem.fs-types-exclude
 filesystem | mount-points | N/A | --collector.filesystem.mount-points-exclude
+hwmon | chip | --collector.hwmon.chip-include | --collector.hwmon.chip-exclude
 netdev | device | --collector.netdev.device-include | --collector.netdev.device-exclude
 qdisk | device | --collector.qdisk.device-include | --collector.qdisk.device-exclude
 sysctl | all | --collector.sysctl.include | N/A
@@ -183,14 +184,16 @@ Name     | Description | OS
 ---------|-------------|----
 buddyinfo | Exposes statistics of memory fragments as reported by /proc/buddyinfo. | Linux
 cgroups | A summary of the number of active and enabled cgroups | Linux
+cpu\_vulnerabilities | Exposes CPU vulnerability information from sysfs. | Linux
 devstat | Exposes device statistics | Dragonfly, FreeBSD
+drm | Expose GPU metrics using sysfs / DRM, `amdgpu` is the only driver which exposes this information through DRM | Linux
 drbd | Exposes Distributed Replicated Block Device statistics (to version 8.4) | Linux
 ethtool | Exposes network interface information and network driver statistics equivalent to `ethtool`, `ethtool -S`, and `ethtool -i`. | Linux
 interrupts | Exposes detailed interrupts statistics. | Linux, OpenBSD
 ksmd | Exposes kernel and system statistics from `/sys/kernel/mm/ksm`. | Linux
 lnstat | Exposes stats from `/proc/net/stat/`. | Linux
 logind | Exposes session counts from [logind](http://www.freedesktop.org/wiki/Software/systemd/logind/). | Linux
-meminfo\_numa | Exposes memory statistics from `/proc/meminfo_numa`. | Linux
+meminfo\_numa | Exposes memory statistics from `/sys/devices/system/node/node[0-9]*/meminfo`, `/sys/devices/system/node/node[0-9]*/numastat`. | Linux
 mountstats | Exposes filesystem statistics from `/proc/self/mountstats`. Exposes detailed NFS client statistics. | Linux
 network_route | Exposes the routing table as metrics | Linux
 perf | Exposes perf based metrics (Warning: Metrics are dependent on kernel configuration and settings). | Linux
@@ -374,7 +377,7 @@ The exporter supports TLS via a new web configuration file.
 ./node_exporter --web.config.file=web-config.yml
 ```
 
-See the [exporter-toolkit https package](https://github.com/prometheus/exporter-toolkit/blob/v0.1.0/https/README.md) for more details.
+See the [exporter-toolkit web-configuration](https://github.com/prometheus/exporter-toolkit/blob/master/docs/web-configuration.md) for more details.
 
 [travis]: https://travis-ci.org/prometheus/node_exporter
 [hub]: https://hub.docker.com/r/prom/node-exporter/
