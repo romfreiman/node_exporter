@@ -1,9 +1,9 @@
-// Copyright 2022 The Prometheus Authors
+// Copyright 2020 The Prometheus Authors
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-// http://www.apache.org/licenses/LICENSE-2.0
+//     http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -11,15 +11,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//go:build !go1.18
-// +build !go1.18
+package validations
 
-package version
+import (
+	"errors"
 
-func getRevision() string {
-	return Revision
-}
+	dto "github.com/prometheus/client_model/go"
+)
 
-func getTags() string {
-	return "unknown" // Not available prior to Go 1.18
+// LintHelp detects issues related to the help text for a metric.
+func LintHelp(mf *dto.MetricFamily) []error {
+	var problems []error
+
+	// Expect all metrics to have help text available.
+	if mf.Help == nil {
+		problems = append(problems, errors.New("no help text"))
+	}
+
+	return problems
 }
