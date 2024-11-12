@@ -35,6 +35,77 @@ SymlinkTo: ../../../devices/system/node/node0
 Path: sys/bus/node/devices/node1
 SymlinkTo: ../../../devices/system/node/node1
 # ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Directory: sys/bus/pci
+Mode: 755
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Directory: sys/bus/pci/devices
+Mode: 755
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Directory: sys/bus/pci/devices/0000:00:00.0
+Mode: 755
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:00.0/device
+Lines: 1
+0x7896
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:00.0/vendor
+Lines: 1
+0x4565
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Directory: sys/bus/pci/devices/0000:00:02.0
+Mode: 755
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:02.0/device
+Lines: 1
+0x20b5
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:02.0/vendor
+Lines: 1
+0x10de
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Directory: sys/bus/pci/devices/0000:00:07.0
+Mode: 755
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:07.0/device
+Lines: 1
+0x2344
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:07.0/vendor
+Lines: 1
+0x6565
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Directory: sys/bus/pci/devices/0000:00:09.0
+Mode: 755
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:09.0/device
+Lines: 1
+0x20b5
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:09.0/vendor
+Lines: 1
+0x10de
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Directory: sys/bus/pci/devices/0000:00:1f.5
+Mode: 755
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:1f.5/device
+Lines: 1
+0x2717
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Path: sys/bus/pci/devices/0000:00:1f.5/vendor
+Lines: 1
+0x10de
+Mode: 644
+# ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Directory: sys/class
 Mode: 755
 # ttar - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
