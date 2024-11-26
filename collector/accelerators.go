@@ -65,12 +65,19 @@ var (
 		"0x2717": "RTX_4090",
 		"0x2235": "A40",
 		"0x1df5": "V100",
+		"0x20f1": "A100 40G",
+		"0x1ff2": "T400 4GB",
+		"0x1eb8": "Tesla T4",
+	}
+	mellanoxDeviceIDsMap = map[string]string{
+		"0xa2dc": "BlueField-3",
 	}
 
 	// vendor map, add any new vendor to this map
 	vendorToDeviceMap = map[string]vendorData{
 		// nvidia devices
 		"0x10de": vendorData{"NVIDIA", nvidiaDeviceIDsMap},
+		"0x15b3": vendorData{"Mellanox", mellanoxDeviceIDsMap},
 	}
 )
 
