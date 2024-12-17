@@ -60,17 +60,73 @@ var (
 	)
 
 	nvidiaDeviceIDsMap = map[string]string{
-		"0x20b5": "A100",
-		"0x2230": "RTX_A6000",
-		"0x2717": "RTX_4090",
-		"0x2235": "A40",
-		"0x1df5": "V100",
+		"0x20f5": "NVIDIA A800 PCIe 80GB",
+		"0x20f6": "NVIDIA A800 40GB PCIe active cooled",
+		"0x20fd": "NVIDIA AX800",
+		"0x20f1": "NVIDIA A100 PCIe 40GB",
+		"0x20b5": "NVIDIA A100 PCIe 80GB",
+		"0x2235": "NVIDIA A40",
+		"0x20b7": "NVIDIA A30",
+		"0x2236": "NVIDIA A10",
+		"0x25b6": "NVIDIA A16",
+		"0x2322": "H800 NVL",
+		"0x2321": "NVIDIA H100 NVL",
+		"0x2331": "NVIDIA H100 PCIe 80GB",
+		"0x26b5": "NVIDIA L40",
+		"0x26b9": "NVIDIA L40S",
+		"0x26bA": "NVIDIA L20 liquid cooled",
+		"0x27b8": "NVIDIA L4",
+		"0x27b6": "NVIDIA L2",
+		"0x26b1": "NVIDIA RTX 6000 Ada",
+		"0x26b3": "NVIDIA RTX 5880 Ada",
+		"0x2231": "NVIDIA RTX 5000 Ada",
+		"0x2230": "NVIDIA RTX A6000",
+		"0x2233": "NVIDIA RTX A5500",
+		"0x1e30": "NVIDIA RTX 8000 passive",
+		"0x2531": "NVIDIA RTX A2000",
+	}
+
+	amdDeviceIDsMap = map[string]string{
+		"0x740f": "AMD MI210",
+		"0x740c": "AMD MI250",
+		"0x7408": "AMD MI250X",
+		"0x74a0": "AMD MI300",
+		"0x74a1": "AMD MI300X",
+		"0x74a5": "AMD MI325X",
+		"0x7aa2": "AMD MI308X",
+		"0x74b5": "AMD MI300X VF",
+		"0x7410": "AMD MI210 VF",
+	}
+
+	gaudiDeviceIDsMap = map[string]string{
+		"0x1000": "Gaudi 1",
+		"0x1020": "Gaudi 2",
+	}
+
+	intelDeviceIDsMap = map[string]string{
+		"0x0bd5": "Intel Data Center GPU Max 1550",
+		"0x0bda": "Intel Data Center GPU Max 1100",
+		"0x56c0": "Intel Data Center GPU Flex 170",
+		"0x56c1": "Intel Data Center GPU Flex 140",
+	}
+
+	qualcommDeviceIDsMap = map[string]string{
+		"0xa100": "Qualcomm AI 100",
+		"0xa080": "Qualcomm AI 80",
 	}
 
 	// vendor map, add any new vendor to this map
 	vendorToDeviceMap = map[string]vendorData{
 		// nvidia devices
 		"0x10de": vendorData{"NVIDIA", nvidiaDeviceIDsMap},
+		// amd devices
+		"0x1002": vendorData{"AMD", amdDeviceIDsMap},
+		// gaudi devices
+		"0x1da3": vendorData{"GAUDI", gaudiDeviceIDsMap},
+		// intel devices
+		"0x8086": vendorData{"INTEL", intelDeviceIDsMap},
+		// qualcomm devices
+		"0x17cb": vendorData{"QUALCOMM", qualcommDeviceIDsMap},
 	}
 )
 
