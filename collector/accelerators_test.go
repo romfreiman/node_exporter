@@ -39,9 +39,8 @@ func (c testAcceleratorCollector) Describe(ch chan<- *prometheus.Desc) {
 func TestAccelerator(t *testing.T) {
 	testcase := `# HELP node_accelerator_card_info Accelerator card info including vendor, model and pci id (address)
 	# TYPE node_accelerator_card_info counter
-	node_accelerator_card_info{id="0000:00:02.0",model="A100",vendor="NVIDIA"} 1
-	node_accelerator_card_info{id="0000:00:09.0",model="A100",vendor="NVIDIA"} 1
-	node_accelerator_card_info{id="0000:00:1f.5",model="RTX_4090",vendor="NVIDIA"} 1
+	node_accelerator_card_info{id="0000:00:02.0",model="NVIDIA A100 PCIe 80GB",vendor="NVIDIA"} 1
+	node_accelerator_card_info{id="0000:00:09.0",model="NVIDIA A100 PCIe 80GB",vendor="NVIDIA"} 1
 	`
 
 	*sysPath = "fixtures/sys"
